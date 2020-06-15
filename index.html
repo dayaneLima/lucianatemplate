@@ -6,7 +6,7 @@
     <title>Gerador Imagem Luciana Marteleto</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-  <body id='body' style='margin:40px;'>
+  <body id='body' style='margin-left:10px;margin-right:10px;margin-top:10px;margin-bottom:60px;'>
     <div class="container">
         <form>
             <div class='row'>
@@ -14,15 +14,18 @@
 					<div class="form-group">
 					  <label for="">Selecione a cor da imagem:</label>
 					  <select class="form-control"  id='imagemSelecionada' onchange="gerarCanvas('idCanvas', false)">
-						<option value="roxo" selected>Roxo</option>
-						<option value="amarelo-pastel">Amarelo Pastel</option>
-						<option value="amarelo">Amarelo</option>
-						<option value="amarelo-orientacao-profissional">Amarelo Orientação Profissional</option>
-						<option value="azul">Azul</option>
-						<option value="cinza-claro">Cinza Claro</option>
-						<option value="cinza-escuro">Cinza Escuro</option>
-						<option value="verde">Verde</option>
-						<option value="vermelho">Vermelho</option>
+						<option value="nova_logo_verde" selected>Verde</option> 
+						<option value="nova_logo_azul">Azul</option> 
+						<option value="nova_logo_cinza">Cinza</option> 
+						<!-- <option value="roxo" selected>Roxo</option> -->
+						<!-- <option value="amarelo-pastel">Amarelo Pastel</option> -->
+						<!-- <option value="amarelo">Amarelo</option> -->
+						<!-- <option value="amarelo-orientacao-profissional">Amarelo Orientação Profissional</option> -->
+						<!-- <option value="azul">Azul</option> -->
+						<!-- <option value="cinza-claro">Cinza Claro</option> -->
+						<!-- <option value="cinza-escuro">Cinza Escuro</option> -->
+						<!-- <option value="verde">Verde</option> -->
+						<!-- <option value="vermelho">Vermelho</option> -->
 					  </select>
 					</div>
 				</div>
@@ -66,6 +69,7 @@
                           <option value="center" selected>Centro</option>
                           <option value="left">Esquerda</option>
                           <option value="right">Direita</option>
+						  <!-- <option value="justify">Justificado</option> -->
                         </select>
                   </div>
               </div>
@@ -121,12 +125,14 @@
               var canvas = document.getElementById(idCanvas);
               var context = canvas.getContext('2d');
               var x = canvas.width / 2;
-              var y = canvas.height / 2;
+              var y = canvas.height / 3;
 			  
 			  if (orientacaoTexto == "left") {
-				posicaoTexto = baixar ? 150 : 60;
+				posicaoTexto = baixar ? 70 : 25;
 			  } else if (orientacaoTexto == "right") {
-				posicaoTexto = baixar ? canvas.width-150 : canvas.width-60;
+				posicaoTexto = baixar ? canvas.width-70 : canvas.width-25;
+			  } else if (orientacaoTexto == "justify") {
+				posicaoTexto = 10;
 			  } else {
 				posicaoTexto = x;
 			  }
